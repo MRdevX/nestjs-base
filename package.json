@@ -1,0 +1,109 @@
+{
+  "name": "nestjs-boilerplate",
+  "version": "1.0.0",
+  "description": "A production ready NestJS boilerplate with batteries included. No Kidding!",
+  "author": "Vinayak Sarawagi <vinayaksarawagi25@gmail.com>",
+  "private": false,
+  "license": "MIT",
+  "keywords": [
+    "nestjs-boilerplate",
+    "nestjs-objection",
+    "nestjs-starter-template",
+    "nestjs-template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squareboat/nestjs-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/squareboat/nestjs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/squareboat/nestjs-boilerplate",
+  "scripts": {
+    "setup": "npm link",
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "postbuild": "npm link",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/src/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "knex": "knex --knexfile knexfile.ts",
+    "migrate:up": "npm run knex migrate:latest",
+    "migrate:down": "npm run knex migrate:rollback",
+    "migrate:make": "npm run knex migrate:make -- -x ts",
+    "migrate:list": "npm run knex migrate:list",
+    "seed:run": "npm run knex seed:run",
+    "seed:make": "npm run knex seed:make -- -x ts"
+  },
+  "bin": {
+    "nestjs-boilerplate": "./dist/src/cli.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.4.4",
+    "@nestjs/config": "^0.5.0",
+    "@nestjs/core": "^7.4.4",
+    "@nestjs/platform-express": "^7.4.4",
+    "chalk": "^4.1.0",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
+    "cli-table3": "^0.6.0",
+    "dotenv": "^8.2.0",
+    "express-rate-limit": "^5.1.3",
+    "helmet": "^4.1.1",
+    "inquirer": "^7.3.3",
+    "knex": "^0.21.9",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "objection": "^2.2.3",
+    "query-string": "^6.13.6",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^6.6.3",
+    "uuid": "^8.3.1",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^7.5.1",
+    "@nestjs/schematics": "^7.1.2",
+    "@nestjs/testing": "^7.4.4",
+    "@types/chalk": "^2.2.0",
+    "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.6",
+    "@types/supertest": "^2.0.8",
+    "@types/yargs": "^15.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "prettier": "^2.1.2",
+    "supertest": "^6.0.0",
+    "ts-jest": "^26.4.3",
+    "ts-loader": "^8.0.7",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
