@@ -50,7 +50,7 @@
     "@nestjs/common": "^7.4.4",
     "@nestjs/config": "^0.5.0",
     "@nestjs/core": "^7.4.4",
-    "@nestjs/platform-express": "^7.4.4",
+    "@nestjs/platform-express": "^9.2.1",
     "chalk": "^4.1.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
